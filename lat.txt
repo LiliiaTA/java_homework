@@ -1,0 +1,85 @@
+*** Множество
+ 
+package com.company;
+import mypackage.Triangle;
+import mypackage.PascalTriangle;
+
+import java.util.*;
+import java.util.HashSet;
+import java.util.HashMap;
+
+
+public class Main {
+    public static void main(String[] args) {
+        var hs = new LinkedHashSet<Integer>(); // множество
+        hs.add(5);
+        hs.add(15);
+        hs.add(10);
+        int s = 0;
+        for (int o: hs) {
+            s+=o;
+
+        }
+        System.out.println(s);
+    }
+}
+
+***
+
+public class Main {
+    public static void main(String[] args) {
+        var arr = new ArrayList<Integer>(); // список
+        arr.add(5);
+        arr.add(7);
+        arr.add(5);
+        int s = 0;
+        for (int o: arr) {
+            s+=o;
+
+        }
+        System.out.println(s);
+    }
+}
+
+***
+
+package com.company;
+import mypackage.Triangle;
+import mypackage.PascalTriangle;
+
+import java.util.*;
+import java.util.HashSet;
+import java.util.HashMap;
+
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println(integerToRoman(3999));
+    }
+     public static String integerToRoman(int n){
+        var dict = new LinkedHashMap<Integer, String>();
+        dict.put(1000, "M");
+        dict.put(900, "CM");
+        dict.put(500, "D");
+        dict.put(400, "CD");
+        dict.put(100, "C");
+        dict.put(90, "XC");
+        dict.put(50, "L");
+        dict.put(40, "XL");
+        dict.put(10, "X");
+        dict.put(9, "IX");
+        dict.put(5, "V");
+        dict.put(4, "IV");
+        dict.put(1, "I");
+
+        StringBuilder s = new StringBuilder();
+
+        for (Integer i : dict.keySet()) {
+            while (n >= i) {
+                s.append(dict.get(i));
+                n -= i;
+            }
+        }
+        return s.toString();
+    }
+}
