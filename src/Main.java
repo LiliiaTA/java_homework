@@ -1,20 +1,48 @@
-/*
-Задача 1. Вычислить значение выражения, используя различные вещественные типы
-данных (BigDecimal) а=1000, b=0.0001.
- */
+// Вывести кол-во счастливых билетов
 
-import java.math.BigDecimal;
 
 public class Main {
     public static void main(String[] args) {
-        BigDecimal a = new BigDecimal(1000);
-        BigDecimal b = new BigDecimal(0.0001);
-        BigDecimal r1 = a.add(b).multiply(a.add(b)); // (a+b)*(a+b)
-        BigDecimal r2 = (a.multiply(b)).multiply(new BigDecimal(2)); // 2*a*b
-        BigDecimal r3 = a.multiply(a).add(r2); // (a*a)+(2*a*b)
-        BigDecimal r4 = r1.subtract(r3); // (a+b)*(a+b)-(a*a+2*a*b)
-        BigDecimal r5 = b.multiply(b); // b*b
-        BigDecimal result = r4.divide(r5); // ((a+b)*(a+b)-(a*a+2*a*b))/(b*b)
-        System.out.println(result);
+        CountTicket counter = new CountTicket();
+        System.out.println(ticket.countAmountTicket);
     }
 }
+
+
+//public class Main {
+//    public static void main(String[] args) {
+//        int count = 0;
+//        for (int i = 0; i < 1000000; i++) {
+//            int n1 = i / 100000 % 10;
+//            int n2 = i / 10000 % 10;
+//            int n3 = i / 1000 % 10;
+//            int n4 = i / 100 % 10;
+//            int n5 = i / 10 % 10;
+//            int n6 = i % 10;
+//
+//            int sum1 = n1 + n2 + n3;
+//            int sum2 = n4 + n5 + n6;
+//
+//            if (sum1 == sum2) {
+//                count++;
+//            }
+//        }
+//        System.out.println(count);
+//    }
+//}
+
+
+//public class Main {
+//    public static void main(String[] args) {
+//        int result = 0;
+//        for (int i=0; i < 1000000; i++){
+//            int first = getDigitsSum(i/1000);
+//            int last = getDigitsSum(i%1000);
+//            if(first==last){
+//                result++;
+//            }
+//        }
+//        System.out.println("Всего %d счастливых билетов", result);
+//    }
+//
+//}
